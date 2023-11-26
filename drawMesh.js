@@ -23,7 +23,6 @@ const getPartName = (triangleIndex) => {
 // Função para calcular a distância entre dois pontos
 const calculateDistance = (point1, point2) => {
   return Math.sqrt((point2.x - point1.x) ** 2 + (point2.y - point1.y) ** 2);
-    
 };
 
 // Função para exibir a distância no canvas
@@ -52,7 +51,7 @@ const pixelsToCentimeters = (pixels) => {
 };
 
 // Função para desenhar a malha e exibir distâncias específicas
-export const drawMeshWithDistances = (prediction, ctx, drawLines) => {
+export const drawMeshWithDistances = (prediction, ctx) => {
   if (!prediction) return;
   const keyPoints = prediction.keypoints;
   if (!keyPoints) return;
@@ -67,25 +66,10 @@ export const drawMeshWithDistances = (prediction, ctx, drawLines) => {
       TRIANGULATION[i * 3 + 2],
     ].map((index) => keyPoints[index]);
 
-    const part = getPartName(i);
-    const color = PART_COLORS[part] || "aqua";
+    const part = getPartName(i); // Obtem o nome da parte
+    const color = PART_COLORS[part] || "aqua"; // Usa a cor padrão "aqua" se não definida
 
     drawPath(ctx, points, true, color);
-  }
-
-  if (drawLines) {
-    for (let i = 0; i < TRIANGULATION.length / 3; i++) {
-      const points = [
-        TRIANGULATION[i * 3],
-        TRIANGULATION[i * 3 + 1],
-        TRIANGULATION[i * 3 + 2],
-      ].map((index) => keyPoints[index]);
-
-      const part = getPartName(i);
-      const color = PART_COLORS[part] || "aqua";
-
-      drawPath(ctx, points, true, color);
-    }
   }
 
   // Desenha os pontos da malha
@@ -119,56 +103,7 @@ const calculateAndDisplayDistances = (ctx, keyPoints) => {
   const rightEar = keyPoints[454]; // Ponto da orelha direita
   const earToEar = calculateDistance(leftEar, rightEar);
   displayDistance(ctx, leftEar, rightEar, earToEar);
-
-  // Queixo superior até inferior ( Q Q )
-  const chinTop = keyPoints[152]; // Ponto superior do queixo
-  const chinBottom = keyPoints[11]; // Ponto inferior do queixo
-  const chinTopToBottom = calculateDistance(chinTop, chinBottom);
-  displayDistance(ctx, chinTop, chinBottom, chinTopToBottom);
-
-  // Queixo esquerda até direita ( Q Q )
-  const chinLeft = keyPoints[152]; // Ponto esquerdo do queixo
-  const chinRight = keyPoints[345]; // Ponto direito do queixo
-  const chinLeftToRight = calculateDistance(chinLeft, chinRight);
-  displayDistance(ctx, chinLeft, chinRight, chinLeftToRight);
-
-  // Íris de um olho até íris do outro olho (O O)
-  const leftIris = keyPoints[263]; // Ponto da íris do olho esquerdo
-  const rightIris = keyPoints[466]; // Ponto da íris do olho direito
-  const irisToIris = calculateDistance(leftIris, rightIris);
-  displayDistance(ctx, leftIris, rightIris, irisToIris);
-
-  // Na linha da sobrancelha, da ponta esquerda do rosto até a direita (T T )
-  const leftBrow = keyPoints[103]; // Ponto da sobrancelha esquerda
-  const rightBrow = keyPoints[334]; // Ponto da sobrancelha direita
-  const browToLeftToRight = calculateDistance(leftBrow, rightBrow);
-  displayDistance(ctx, leftBrow, rightBrow, browToLeftToRight);
-
-  // Na linha da boca, de uma ponta do rosto até a outra ( A A )
-  const leftMouth = keyPoints[61]; // Ponto da boca esquerda
-  const rightMouth = keyPoints[291]; // Ponto da boca direita
-  const mouthToLeftToRight = calculateDistance(leftMouth, rightMouth);
-  displayDistance(ctx, leftMouth, rightMouth, mouthToLeftToRight);
-
-  // Do começo da testa perto do cabelo até o centro da sobrancelha ( linha reta pra baixo ) (C S )
-  const hairline = keyPoints[0]; // Ponto do início do cabelo
-  const centerBrow = keyPoints[151]; // Ponto do centro da sobrancelha
-  const hairlineToCenterBrow = calculateDistance(hairline, centerBrow);
-  displayDistance(ctx, hairline, centerBrow, hairlineToCenterBrow);
-
-  // Da ponta do nariz até a ponta da boca (N L)
-  const noseTip = keyPoints[5]; // Ponto da ponta do nariz
-  const mouthTip = keyPoints[58]; // Ponto da ponta da boca
-  const noseToMouth = calculateDistance(noseTip, mouthTip);
-  displayDistance(ctx, noseTip, mouthTip, noseToMouth);
-
-  // Dentro da função calculateAndDisplayDistances
-  //console.log("Chin:", chin);
-  //console.log("Forehead:", forehead);
-  //console.log("Chin to Forehead:", chinToForehead);
-
 };
-
 
 // Função para desenhar um caminho com uma cor específica
 const drawPath = (ctx, points, closePath, color) => {
