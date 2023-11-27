@@ -1,0 +1,17 @@
+//cs = 9cm
+  //do = 7.5
+  //q3 = 6
+  //nl = 3
+  const lines = [
+    { name: "Chin to Forehead", points: [152, 10] }, //testa a queixo, ok // t-t
+    { name: "Eye to Eye", points: [33, 263] },  //final do olho a final do olho ok
+    { name: "Ear to Ear", points: [234, 454] }, //ponta do rosto a ponta do rosto ok
+    { name: "Chin Top to Bottom", points: [152, 11] },
+    { name: "Iris to Iris", points: [263, 466] }, //correto
+    { name: "boca a boca", points: [61, 291] }, // boca //ok
+    { name: "Hairline to Center Brow", points: [0, 151] }, //testa  até centro da boca
+//    { name: "Chin Left to Right", points: [152, 345] }, //incorreto 345 ponto preciso
+//    { name: "Nose to Mouth", points: [5, 58] }, incorreto
+//{ name: "Brow Left to Right", points: [103, 334] }, //incorreto
+  ];
+// SÃO 7 MEDIDAS, DE IRIS A IRIS, COMEÇO DA TESTA ATÉ CENTRO DOS OLHOS, NA LINHA DO OLHO DE UMA PONTA DO ROSTO ATÉ A OUTRA PONTA, DO CENTOR EM BAIXO DO NARIZ ATÉ O INICIO DA BOCA, DE UMA PONTA DO ROSTO ATÉ A OUTRA NA LINHA EM CIMA DA BOCA, DE UM QUEIXO ATE O OUTRO, UMA LINHA EM BAIXO DA BOCA, CENTRO DO QUEIXO ATÉ O COMEÇO DELE

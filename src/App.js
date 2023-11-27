@@ -26,21 +26,21 @@ function App() {
   const [drawLines, setDrawLines] = useState(true);
   const [markLines, setMarkLines] = useState(false);
   const [buttonMessage, setButtonMessage] = useState("Clique para fazer algo");
-  const [backgroundColor, setBackgroundColor] = useState("#000"); // Defina a cor inicial
+  const [backgroundColor, setBackgroundColor] = useState("#fff"); // Defina a cor inicial
   const [isColor1, setIsColor1] = useState(true);
   const [showNoseLine, setShowNoseLine] = useState(true);
   
   const [lines, setLines] = useState({
     chinToForehead: true,
     eyeToEye: true,
-    earToEar: false,
-    chinTopToBottom: false,
-    chinLeftToRight: false,
-    irisToIris: false,
-    browToLeftToRight: false,
-    mouthToLeftToRight: false,
-    hairlineToCenterBrow: false,
-    noseToMouth: false,
+    earToEar: true,
+    chinTopToBottom: true,
+    chinLeftToRight: true,
+    irisToIris: true,
+    browToLeftToRight: true,
+    mouthToLeftToRight: true,
+    hairlineToCenterBrow: true,
+    noseToMouth: true,
   });
 
   const toggleNoseLine = () => {
@@ -76,7 +76,7 @@ function App() {
   };
 
   const toggleBackgroundColor = () => {
-    setBackgroundColor(isColor1 ? "#00f" : "#000"); // Altera entre cor1 e cor2
+    setBackgroundColor(isColor1 ? "#000" : "#fff"); // Altera entre cor1 e cor2
     setIsColor1(!isColor1);
   };
 
