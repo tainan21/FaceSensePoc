@@ -90,24 +90,20 @@ function App() {
 
   return (
     <div>
-      <div className="teste2">
-        <button onClick={toggleDrawLines}>
-          {drawLines ? "Desativar linhas" : "Ativar linhas"}
-        </button>
-        <button onClick={toggleMarkLines}>
-          {markLines ? "Desativar marcação" : "Ativar marcação"}
-        </button>
-        <button onClick={measureDistances}>Medir distâncias</button>
-        <button onClick={handleClick}>{buttonMessage}</button>
-        <button onClick={toggleNoseLine}>
+      <div className="teste2 ">
+        <button class="buttonText" onClick={toggleDrawLines}>{drawLines ? "Desativar linhas" : "Ativar linhas"}</button>
+        <button class="buttonText" onClick={toggleMarkLines}>{markLines ? "Desativar marcação" : "Ativar marcação"}</button>
+        <button class="buttonText" onClick={measureDistances}>Medir distâncias</button>
+        <button class="buttonText" onClick={handleClick}>{buttonMessage}</button>
+        <button class="buttonText" onClick={toggleNoseLine}>
           {showNoseLine ? "Esconder Linha do Nariz" : "Mostrar Linha do Nariz"}
         </button>
-        <button onClick={() => setLoaded((prevLoaded) => !prevLoaded)}>
+        <button class="buttonText" onClick={() => setLoaded((prevLoaded) => !prevLoaded)}>
           Toggle Câmera
         </button>
-        <button onClick={toggleBackgroundColor}>Alternar Cor de Fundo</button>
+        <button class="buttonText" onClick={toggleBackgroundColor}>Alternar Cor de Fundo</button>
       </div>
-      <div className="teste">
+      <div className="teste container">
         <Webcam
           width={inputResolution.width}
           height={inputResolution.height}

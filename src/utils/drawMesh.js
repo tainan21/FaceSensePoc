@@ -105,10 +105,10 @@ const drawPath = (ctx, points, closePath, color) => {
 const calculateAndDisplayDistances = (ctx, keyPoints) => {
   const lines = [
     { name: "Chin to Forehead", points: [152, 10], letter: "C-S", color: "blue" },
-    { name: "olho a olho", points: [33, 263], letter: "E-E", color: "green" },
+    { name: "olho a olho                                                                           ", points: [33, 263], letter: "E-E", color: "green" },
     { name: "Ear to Ear", points: [234, 454], letter: "E-E", color: "red" },
     { name: "testa a boca", points: [152, 11], letter: "Q-Q", color: "orange" },
-    { name: "Iris ta Iris", points: [263, 466], letter: "O-O", color: "purple" },
+    { name: "Iris a Iris", points: [263, 466], letter: "O-O", color: "purple" },
     { name: "Mouth to Mouth", points: [61, 291], letter: "A-A", color: "pink" },
     { name: "Hairline to Center Brow", points: [0, 151], letter: "C-S", color: "brown" },
   ];
