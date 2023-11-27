@@ -94,12 +94,8 @@ function App() {
         <button class="buttonText" onClick={toggleDrawLines}>{drawLines ? "Desativar linhas" : "Ativar linhas"}</button>
         <button class="buttonText" onClick={toggleMarkLines}>{markLines ? "Desativar marcação" : "Ativar marcação"}</button>
         <button class="buttonText" onClick={measureDistances}>Medir distâncias</button>
-        <button class="buttonText" onClick={handleClick}>{buttonMessage}</button>
         <button class="buttonText" onClick={toggleNoseLine}>
           {showNoseLine ? "Esconder Linha do Nariz" : "Mostrar Linha do Nariz"}
-        </button>
-        <button class="buttonText" onClick={() => setLoaded((prevLoaded) => !prevLoaded)}>
-          Toggle Câmera
         </button>
         <button class="buttonText" onClick={toggleBackgroundColor}>Alternar Cor de Fundo</button>
       </div>

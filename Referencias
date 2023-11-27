@@ -1,3 +1,5 @@
+
+
 import React, { useRef, useState, useEffect } from "react";
 import "@tensorflow/tfjs";
 import "@tensorflow/tfjs-backend-webgl";
@@ -99,6 +101,7 @@ function App() {
           {showNoseLine ? "Esconder Linha do Nariz" : "Mostrar Linha do Nariz"}
         </button>
         <button class="buttonText" onClick={() => setLoaded((prevLoaded) => !prevLoaded)}>Toggle Câmera</button>
+        
         <button class="buttonText" onClick={toggleBackgroundColor}>Alternar Cor de Fundo</button>
       </div>
       <div className="teste container">
