@@ -33,14 +33,14 @@ function App() {
   const [lines, setLines] = useState({
     chinToForehead: true,
     eyeToEye: true,
-    earToEar: true,
-    chinTopToBottom: true,
-    chinLeftToRight: true,
-    irisToIris: true,
-    browToLeftToRight: true,
-    mouthToLeftToRight: true,
-    hairlineToCenterBrow: true,
-    noseToMouth: true,
+    earToEar: false,
+    chinTopToBottom: false,
+    chinLeftToRight: false,
+    irisToIris: false,
+    browToLeftToRight: false,
+    mouthToLeftToRight: false,
+    hairlineToCenterBrow: false,
+    noseToMouth: false,
   });
 
   const toggleNoseLine = () => {

@@ -185,3 +185,9 @@ const drawPath = (ctx, points, closePath, color) => {
   ctx.strokeStyle = color; // Usa a cor fornecida
   ctx.stroke(region);
 };
+
+
+//cs = 9cm
+//do = 7.5
+//q3 = 6
+//nl = 3
